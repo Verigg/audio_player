@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>515</width>
+    <height>579</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Audio player</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(98, 0, 202, 255), stop:1 rgba(218, 0, 156, 255));
+font-family: Noto Sans;
+color: rgba(0,0,0,160);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <widget class="QFrame" name="verticalFrame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>491</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 2);
+</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_12">
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="styleSheet">
+        <string notr="true">
+QTabBar::tab:selected {
+color: black;
+background-color: rgba(255,255,255,30);
+color: rgba(0,0,0,200);
+
+}
+
+QTabBar::tab:!selected {
+color: black;
+color: rgba(0,0,0,160);
+}
+
+QTabBar::tab {
+height: 30px;
+width: 100px;
+border: 1px solid rgba(255, 255, 255, 40);
+border-radius: 7px;
+border-bottom:none;
+
+
+}
+
+QTabWidget{
+font-weight: bold;
+font-family: Noto Sans;
+
+
+}
+
+QTabWidget::pane {
+top:-1px;
+background-color: rgba(255, 255, 255, 30);
+border: 1px solid rgba(255, 255, 255, 40);
+border-radius: 7px;
+} 
+
+QTabWidget::tab-bar {
+bottom:1px;
+
+} 
+
+
+
+
+
+</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tracklist">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;
+font-family: Noto Sans;</string>
+        </property>
+        <attribute name="title">
+         <string>Tracklist</string>
+        </attribute>
+        <widget class="QFrame" name="tracklist_frame">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+           <y>10</y>
+           <width>441</width>
+           <height>361</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QPushButton" name="shuffle_pushButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QPushButton
+{
+   background-color: none;
+}
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+	border-radius: 7px;
+}</string>
+              </property>
+              <property name="text">
+               <string>Shuffle</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>252</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="delete_pushButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QPushButton
+{
+   background-color: none;
+}
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+	border-radius: 7px;
+}</string>
+              </property>
+              <property name="text">
+               <string>Delete</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QListWidget" name="tracklist_listWidget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="isWrapping" stdset="0">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="add">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;
+font-family: Noto Sans;</string>
+        </property>
+        <attribute name="title">
+         <string>Add</string>
+        </attribute>
+        <widget class="QFrame" name="load_frame">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>451</width>
+           <height>371</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Enter url to track</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="loadurl_lineEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="text">
+                 <string>Open file explorer</string>
+                </property>
+                <property name="scaledContents">
+                 <bool>false</bool>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QPushButton" name="loadfile_pushButton">
+                  <property name="styleSheet">
+                   <string notr="true">
+QPushButton
+{
+}
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+  border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+  border-radius: 7px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Load file</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="loadfolder_pushButton">
+                  <property name="styleSheet">
+                   <string notr="true">
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+	border-radius: 7px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Load folder</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Search for track</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="search_lineEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QListWidget" name="tracklist_listWidget_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="isWrapping" stdset="0">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="settings">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;
+font-family: Noto Sans;</string>
+        </property>
+        <attribute name="title">
+         <string>Settings</string>
+        </attribute>
+        <widget class="QFrame" name="settings_frame">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>451</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Transparancy</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="transparancy_horizontalSlider">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>90</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Always on top</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="ontop_radioButton">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="player_frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>481</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 30);
+border: 1px solid rgba(255, 255, 255, 40);
+border-radius: 7px;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="trackname_label">
+       <property name="styleSheet">
+        <string notr="true">font-weight: bold;
+font-size: 12pt;
+background-color: none;
+border: none;
+</string>
+       </property>
+       <property name="text">
+        <string>Мармыш - новый мерин</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="track_horizontalSlider">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;
+</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="prev_pushButton">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+
+QPushButton
+{
+   background-color: none;
+border: none;
+}
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+	border-radius: 7px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../PycharmProjects/audio_player/res.qrc">
+           <normaloff>:/icons/icons/skip_previous_FILL0_wght400_GRAD0_opsz48.png</normaloff>:/icons/icons/skip_previous_FILL0_wght400_GRAD0_opsz48.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="play_pushButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+   background-color: none;
+border: none;
+}
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+	border-radius: 7px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../PycharmProjects/audio_player/res.qrc">
+           <normaloff>:/icons/icons/outline_pause_black_24dp.png</normaloff>:/icons/icons/outline_pause_black_24dp.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="next_pushButton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+   background-color: none;
+border: none;
+}
+
+QPushButton:pressed
+{
+  background-color: rgba(224, 255, 255, 50);
+border-radius: 7px;
+}
+
+QPushButton:hover:!pressed
+{
+  background-color: rgba(224, 255, 255, 30);
+	border-radius: 7px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../PycharmProjects/audio_player/res.qrc">
+           <normaloff>:/icons/icons/skip_next_FILL0_wght400_GRAD0_opsz48.png</normaloff>:/icons/icons/skip_next_FILL0_wght400_GRAD0_opsz48.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../PycharmProjects/audio_player/res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

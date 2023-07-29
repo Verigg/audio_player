@@ -215,9 +215,7 @@ class Player(QtWidgets.QMainWindow, audioplayer.Ui_MainWindow):
 if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    QtCore.QCoreApplication.setOrganizationName("Eyllanesc")
-    QtCore.QCoreApplication.setOrganizationDomain("eyllanesc.com")
-    QtCore.QCoreApplication.setApplicationName("MyApp")
+
     player = Player()
 
    # player.setWindowOpacity(player.transparancy)
